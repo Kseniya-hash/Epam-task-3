@@ -1,8 +1,9 @@
 package by.epamtc.dubovik.task1.arrayfiller;
 
 import java.util.Random;
-import by.epamtc.dubovik.task1.Array;
-import by.epamtc.dubovik.task1.InvalidBorderException;
+
+import by.epamtc.dubovik.task1.entity.Array;
+import by.epamtc.dubovik.task1.entity.InvalidBorderException;
 
 public class ArrayRandomGenerator {
 	
@@ -14,7 +15,7 @@ public class ArrayRandomGenerator {
 		Array array = new Array(capacity);
 		Random rand = new Random();
 		for(int i = 0; i < capacity; ++i) {
-			array.addAtIndex(i, lowerBorder + rand.nextInt(higherBorder - lowerBorder));
+			array.set(i, lowerBorder + rand.nextInt(higherBorder - lowerBorder));
 		}
 		return array;
 	}

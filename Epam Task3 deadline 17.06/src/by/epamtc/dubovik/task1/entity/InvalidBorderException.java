@@ -1,4 +1,4 @@
-package by.epamtc.dubovik.task1;
+package by.epamtc.dubovik.task1.entity;
 
 public class InvalidBorderException extends Exception {
 	

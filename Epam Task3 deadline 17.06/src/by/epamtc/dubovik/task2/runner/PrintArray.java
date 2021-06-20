@@ -1,4 +1,4 @@
-package by.epamtc.dubovik.task2;
+package by.epamtc.dubovik.task2.runner;
 
 public class PrintArray {
 	

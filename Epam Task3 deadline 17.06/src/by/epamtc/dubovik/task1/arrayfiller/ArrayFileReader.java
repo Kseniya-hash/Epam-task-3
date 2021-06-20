@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.util.Scanner;
 
 import by.epamtc.dubovik.task1.*;
+import by.epamtc.dubovik.task1.entity.Array;
 
 public class ArrayFileReader {
 	
@@ -13,7 +14,7 @@ public class ArrayFileReader {
 		FileReader input = new FileReader(fileName);
 		Scanner in = new Scanner(input);
 		for(int i = 0; i < capacity; ++i) {
-			array.addAtIndex(i, in.nextInt());
+			array.set(i, in.nextInt());
 			if(!in.hasNextInt()) {
 				break;
 			}

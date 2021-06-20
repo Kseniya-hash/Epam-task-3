@@ -1,6 +1,8 @@
-package by.epamtc.dubovik.task2;
+package by.epamtc.dubovik.task2.runner;
 
 import java.util.Scanner;
+
+import by.epamtc.dubovik.task2.sorting.JaggedArraySorting;
 
 public class Runner {
 	public static void main(String[] args) {

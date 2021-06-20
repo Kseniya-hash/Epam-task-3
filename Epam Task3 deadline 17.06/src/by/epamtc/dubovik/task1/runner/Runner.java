@@ -5,6 +5,11 @@ import java.util.Scanner;
 
 import by.epamtc.dubovik.task1.*;
 import by.epamtc.dubovik.task1.arrayfiller.*;
+import by.epamtc.dubovik.task1.entity.Array;
+import by.epamtc.dubovik.task1.entity.InvalidBorderException;
+import by.epamtc.dubovik.task1.logic.ArrayMathematic;
+import by.epamtc.dubovik.task1.logic.ArraySearch;
+import by.epamtc.dubovik.task1.logic.ArraySort;
 
 public class Runner {
 	
@@ -45,18 +50,18 @@ public class Runner {
 			System.out.println("Все числа Фибоначи:");
 			System.out.println(ArrayMathematic.findFibonacci(array));
 			System.out.println("Все трехзначные без повторяющихся цифр");
-			System.out.println(ArrayMathematic.findNumbersWithoutRepeats(array, 3));
+			System.out.println(ArrayMathematic.findNumbersWithoutRepeats(array));
 			System.out.println("Максимальный элемент массива:");
-			System.out.println(array.findMaxElement());
+			System.out.println(ArraySearch.findMaxElement(array));
 			System.out.println("Минимальный элемент массива:");
-			System.out.println(array.findMinElement());
+			System.out.println(ArraySearch.findMinElement(array));
 			System.out.println("Отсортированный массив:");
-			array.bubbleSort();
+			ArraySort.quickSort(array);
 			System.out.println(array);
 			System.out.println("Введите элемент, который нужно найти в массиве:");
 			int value = in.nextInt();
 			System.out.println("Его индекс:");
-			System.out.println(array.binarySearch(value));
+			System.out.println(ArraySearch.binarySearch(array, value));
 		} catch (IOException e) {
 			System.out.println("Невозможно заполнить массив из файла");
 		} catch (InvalidBorderException e) {
