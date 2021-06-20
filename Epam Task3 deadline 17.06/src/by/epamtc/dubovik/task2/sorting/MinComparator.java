@@ -6,14 +6,7 @@ public class MinComparator implements Comparator<int[]> {
 	
 	@Override
 	public int compare(int[] array1, int[] array2) {
-		//int compare = (int)Math.signum(findMin(array1) - findMin(array2));
-		int compare = 0;
-		if(findMin(array1) < findMin(array2)) {
-			compare = -1;
-		}
-		if(findMin(array1) > findMin(array2)) {
-			compare = 1;
-		}
+		int compare = (int)Math.signum(findMin(array1) - findMin(array2));
 		return compare;
 	}
 	
