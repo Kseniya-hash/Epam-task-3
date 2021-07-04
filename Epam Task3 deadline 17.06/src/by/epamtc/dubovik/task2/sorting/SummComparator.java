@@ -12,8 +12,10 @@ public class SummComparator implements Comparator<int[]> {
 	
 	private static int summOfArray(int[] array) {
 		int summ = 0;
-		for(int i = 0; i < array.length; ++i) {
-			summ += array[i];
+		if(array != null) {
+			for(int i = 0; i < array.length; ++i) {
+				summ += array[i];
+			}
 		}
 		return summ;
 	}

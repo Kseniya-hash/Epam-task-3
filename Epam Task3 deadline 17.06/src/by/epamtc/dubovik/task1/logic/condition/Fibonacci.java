@@ -1,4 +1,4 @@
-package by.epamtc.dubovik.task1.logic;
+package by.epamtc.dubovik.task1.logic.condition;
 
 public class Fibonacci implements Condition {
 
@@ -7,8 +7,9 @@ public class Fibonacci implements Condition {
 		boolean isFibonacciNumber = false;
 		int fibonacci1 = 0;
 		int fibonacci2 = 1;
-		while(fibonacci2 <= number) {
-			if(number == fibonacci2) {
+		
+		while(fibonacci1 <= number) {
+			if(number == fibonacci1) {
 				isFibonacciNumber = true;
 			}
 			int temp = fibonacci1;

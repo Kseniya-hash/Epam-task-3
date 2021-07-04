@@ -1,4 +1,4 @@
-package by.epamtc.dubovik.task1.logic;
+package by.epamtc.dubovik.task1.logic.condition;
 
 public class Prime implements Condition {
 

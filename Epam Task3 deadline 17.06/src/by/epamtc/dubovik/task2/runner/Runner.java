@@ -6,11 +6,10 @@ import by.epamtc.dubovik.task2.sorting.JaggedArraySorting;
 
 public class Runner {
 	public static void main(String[] args) {
-		int[][]array;
 		System.out.println("Введите количество строк");
 		Scanner in = new Scanner(System.in);
 		int rowCount = in.nextInt();
-		array = new int[rowCount][];
+		int[][]array = new int[rowCount][];
 		for(int i  = 0; i < rowCount; ++i) {
 			System.out.println("Введите количество элементов строки");
 			int count = in.nextInt();
@@ -45,6 +44,5 @@ public class Runner {
 		
 		JaggedArraySorting.sortByMinDec(array);
 		System.out.println("По убыванию минимальных элементов строк");
-		PrintArray.printJaggedArray(array);
 	}
 }

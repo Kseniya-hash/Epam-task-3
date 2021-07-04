@@ -41,20 +41,21 @@ public class ArraySort {
 			return;
 		if(leftBorder >= rightBorder)
 			return;
-		int middle = (rightBorder + leftBorder) / 2;
-		int left = leftBorder, right = rightBorder;
 		try {
+		int middle = (rightBorder + leftBorder) / 2;
+		int opora = array.get(middle);
+		int left = leftBorder, right = rightBorder;
 			while(left <=right) {
-				while(array.get(left) < array.get(middle)) {
+				while(array.get(left) < opora) {
 					++left;
 				}
-				while(array.get(right) > array.get(middle)) {
+				while(array.get(right) > opora) {
 					--right;
 				}
 				if(left <= right) {
 					swap(array, left++, right--);
 				}
-				if(left < right)
+				if(left < rightBorder)
 					quickSort(array, left, rightBorder);
 				if(leftBorder < right)
 					quickSort(array, leftBorder, right);

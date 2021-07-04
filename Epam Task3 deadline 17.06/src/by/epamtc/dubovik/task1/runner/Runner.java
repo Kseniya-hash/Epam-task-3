@@ -10,11 +10,12 @@ import by.epamtc.dubovik.task1.entity.InvalidBorderException;
 import by.epamtc.dubovik.task1.logic.ArrayMathematic;
 import by.epamtc.dubovik.task1.logic.ArraySearch;
 import by.epamtc.dubovik.task1.logic.ArraySort;
+import by.epamtc.dubovik.task1.logic.NullArrayException;
 
 public class Runner {
 	
 	public static void main(String[] args) {
-		String fileName = "src/by/epamtc/dubovik/task1/files/array_elements.txt";
+		String fileName = "src/by/epamtc/dubovik/task1/resources/array_elements.txt";
 		System.out.println("Выберите способ заполнения элементов массива\n"
 				+ "FILE - заполнение элементов из файла\n"
 				+ "CONSOLE - заполнение элементов с консоли\n"
@@ -51,10 +52,12 @@ public class Runner {
 			System.out.println(ArrayMathematic.findFibonacci(array));
 			System.out.println("Все трехзначные без повторяющихся цифр");
 			System.out.println(ArrayMathematic.findNumbersWithoutRepeats(array));
-			System.out.println("Максимальный элемент массива:");
-			System.out.println(ArraySearch.findMaxElement(array));
-			System.out.println("Минимальный элемент массива:");
-			System.out.println(ArraySearch.findMinElement(array));
+			try {
+				System.out.println("Максимальный элемент массива:");
+				System.out.println(ArraySearch.findMaxElement(array));
+				System.out.println("Минимальный элемент массива:");
+				System.out.println(ArraySearch.findMinElement(array));
+			} catch (NullArrayException e) {}
 			System.out.println("Отсортированный массив:");
 			ArraySort.quickSort(array);
 			System.out.println(array);
@@ -68,5 +71,4 @@ public class Runner {
 			System.out.println("Граница введена не верно");
 		}
 	}
-
 }

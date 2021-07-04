@@ -35,6 +35,10 @@ public class JaggedArraySorting {
 	}
 	
 	private static void sortInc(int[][] array, Comparator<? super int[]> cmp) {
+		if(array == null) {
+			return;
+		}
+		
 		for(int j = 0; j < array.length; ++j) {
 			for(int i = 0; i < array.length - 1 - j; ++i) {
 				if((cmp.compare(array[i],array[i + 1]) > 0)){
@@ -51,6 +55,10 @@ public class JaggedArraySorting {
 	}
 	
 	private static void reverseOrder(int[][] array) {
+		if(array == null) {
+			return;
+		}
+		
 		for(int i = 0; i < array.length/2; ++i) {
 			swap(array, i, array.length - 1 - i);
 		}

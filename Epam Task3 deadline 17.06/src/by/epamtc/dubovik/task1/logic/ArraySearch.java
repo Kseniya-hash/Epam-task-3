@@ -6,6 +6,9 @@ import by.epamtc.dubovik.task1.entity.InvalidBorderException;
 public class ArraySearch {
 	
 	public static int binarySearch(Array array, int value) {
+		if(array == null) {
+			return -1; 
+		}
 		int low = 0;
 		int high = array.getLength() - 1;
 		try {
@@ -23,25 +26,27 @@ public class ArraySearch {
 				}
 			}
 		} catch (InvalidBorderException e) {};
-		return -(low + 1); 
+		return -1; 
 	}
 
-	public static int findMaxElement(Array array) {
+	public static int findMaxElement(Array array) throws NullArrayException, InvalidBorderException {
+		if(array == null)
+			throw new NullArrayException("Can not find max element. Array is null");
+		
 		int max = 0;
-		try {
-			max = array.get(0);
-		} catch (InvalidBorderException e) {}
+		max = array.get(0);
 		for(int element : array) {
 			max = (max > element) ? max : element;
 		}
 		return max;
 	}
 	
-	public static int findMinElement(Array array) {
+	public static int findMinElement(Array array) throws NullArrayException, InvalidBorderException {
+		if(array == null)
+			throw new NullArrayException("Can not find min element. Array is null");
+		
 		int min = 0;
-		try {
-			min = array.get(0);
-		} catch (InvalidBorderException e) {}
+		min = array.get(0);
 		for(int element : array) {
 			min = (min < element) ? min : element;
 		}

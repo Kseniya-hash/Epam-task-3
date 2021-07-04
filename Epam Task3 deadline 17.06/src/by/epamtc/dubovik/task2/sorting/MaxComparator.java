@@ -11,10 +11,13 @@ public class MaxComparator implements Comparator<int[]> {
 	}
 	
 	private static int findMax(int[] array) {
-		int max = array[0];
-		for(int i = 1; i < array.length; ++i) {
-			if(array[i] > max)
-				max = array[i];
+		int max = 0;
+		if(array != null && array.length != 0) {
+			max = array[0];
+			for(int i = 1; i < array.length; ++i) {
+				if(array[i] > max)
+					max = array[i];
+			}
 		}
 		return max;
 	}

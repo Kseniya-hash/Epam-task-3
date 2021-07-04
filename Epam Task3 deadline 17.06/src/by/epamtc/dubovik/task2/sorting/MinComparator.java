@@ -11,10 +11,13 @@ public class MinComparator implements Comparator<int[]> {
 	}
 	
 	private static int findMin(int[] array) {
-		int min = array[0];
-		for(int i = 1; i < array.length; ++i) {
-			if(array[i] < min)
-				min = array[i];
+		int min = 0;
+		if(array != null && array.length != 0) {
+			min = array[0];
+			for(int i = 1; i < array.length; ++i) {
+				if(array[i] < min)
+					min = array[i];
+			}
 		}
 		return min;
 	}

@@ -1,9 +1,10 @@
-package by.epamtc.dubovik.task1.logic;
+package by.epamtc.dubovik.task1.logic.condition;
 
 import by.epamtc.dubovik.task1.entity.Array;
 import by.epamtc.dubovik.task1.entity.InvalidBorderException;
+import by.epamtc.dubovik.task1.logic.ArraySort;
 
-public class WithoutRepeats implements Condition {
+public class WithoutRepeat implements Condition {
 	private final static int BASE = 10;
 	private final static int DIGITSCOUNT = 3;
 	
@@ -23,19 +24,9 @@ public class WithoutRepeats implements Condition {
 	}
 	
 	private static boolean hasRepeates(int number) {
-		boolean repeates = false;
 		Array digits = findDigits(number);
-		return hasRepeates(digits);
-	}
-	
-	private static Array findDigits(int number) {
-		int numberOfDigits = countDigits(number);
-		Array digits = new Array(numberOfDigits);
-		for(int i = 0; i < numberOfDigits; ++i) {
-			digits.set(i, (int) (number % BASE));
-			number /= BASE;
-		}
-		return digits;
+		boolean repeates = hasRepeates(digits);
+		return repeates;
 	}
 	
 	private static boolean hasRepeates(Array array) {
@@ -51,5 +42,14 @@ public class WithoutRepeats implements Condition {
 		}
 		return repeates;
 	}
-
+	
+	private static Array findDigits(int number) {
+		int numberOfDigits = countDigits(number);
+		Array digits = new Array(numberOfDigits);
+		for(int i = 0; i < numberOfDigits; ++i) {
+			digits.set(i, (int) (number % BASE));
+			number /= BASE;
+		}
+		return digits;
+	}
 }

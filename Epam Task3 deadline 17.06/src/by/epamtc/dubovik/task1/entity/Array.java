@@ -12,7 +12,7 @@ public class Array implements Iterable<Integer> {
 		array = new int[capacity];
 	}
 	
-	public Array(int[] array){
+	public Array(int... array){
 		this(array, 0, array.length);
 	}
 	
@@ -71,8 +71,9 @@ public class Array implements Iterable<Integer> {
 	
 	private boolean cheakIndex(int index) {
 		boolean isValid = false;
-		if((index >= 0) || (index < array.length))
+		if((index >= 0) && (index < array.length)) {
 			isValid = true;
+		}
 		return isValid;
 	}
 	
